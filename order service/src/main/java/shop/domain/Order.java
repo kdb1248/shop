@@ -76,50 +76,31 @@ public class Order {
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
     public static void updateStatus(DeliveryStarted deliveryStarted) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
-        Order order = new Order();
-        repository().save(order);
-
-        */
-
-        /** Example 2:  finding and process
+       
         
 
-        repository().findById(deliveryStarted.get???()).ifPresent(order->{
+        repository().findById(Long.valueOf(deliveryStarted.getOrderId())).ifPresent(order->{
             
-            order // do something
+            order.setStatus("Order Delivered"); // do something
             repository().save(order);
 
 
          });
-        */
+       
 
     }
 
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
     public static void updateStatus(DeliveryCancelled deliveryCancelled) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
-        Order order = new Order();
-        repository().save(order);
-
-        */
-
-        /** Example 2:  finding and process
-        
-
-        repository().findById(deliveryCancelled.get???()).ifPresent(order->{
+       
+        repository().findById(Long.valueOf(deliveryCancelled.getOrderId())).ifPresent(order->{
             
-            order // do something
+            order.setStatus("Order Cancelled"); // do something
             repository().save(order);
 
 
          });
-        */
 
     }
     //>>> Clean Arch / Port Method
