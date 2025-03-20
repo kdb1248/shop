@@ -45,6 +45,11 @@ public class Delivery {
 
         Delivery delivery = new Delivery();
         delivery.setOrderId(String.valueOf(orderPlaced.getId()));
+        delivery.setAddress(orderPlaced.getAddress());
+        delivery.setCustomerId(orderPlaced.getCustomerId());
+        delivery.setProductId(orderPlaced.getProductId());
+        delivery.setQty(orderPlaced.getQty());
+        delivery.setStatus("Delivery Started");
         repository().save(delivery);
 
         DeliveryStarted deliveryStarted = new DeliveryStarted(delivery);
